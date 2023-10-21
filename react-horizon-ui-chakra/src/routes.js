@@ -18,6 +18,8 @@ import NFTMarketplace from "views/admin/marketplace";
 import Profile from "views/admin/profile";
 import DataTables from "views/admin/dataTables";
 import RTL from "views/admin/rtl";
+import WaterAccount from "views/admin/waterAccount";
+import EnergyAccount from "views/admin/energyAccount";
 
 // Auth Imports
 // import SignInCentered from "views/auth/signIn";
@@ -60,6 +62,20 @@ const routes = [
     path: "/profile",
     icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
     component: Profile,
+  },
+  {
+    name: "Conta de água",
+    layout: "/admin",
+    path: "/wateraccount",
+    icon: <Icon as={MdWater} width='20px' height='20px' color='inherit' />,
+    component: WaterAccount,
+  },
+  {
+    name: "Conta de energia",
+    layout: "/admin",
+    path: "/energyaccount",
+    icon: <Icon as={MdWater} width='20px' height='20px' color='inherit' />,
+    component: EnergyAccount,
   },
   {
     name: "Signin",

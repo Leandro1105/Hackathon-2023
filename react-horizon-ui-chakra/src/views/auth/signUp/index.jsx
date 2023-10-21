@@ -62,7 +62,7 @@ function SignIn() {
   const [adress, setAdress] = useState("")
   const [numero, setNumero] = useState(0)
   const [city, setCity] = useState("")
-  const [buttonText, setButtonText] = useState("Sign up");
+  const [buttonText, setButtonText] = useState("Cadastrar");
   const [error, setError] = useState(undefined);
   const history = useHistory();
   const { setUser } = useAuth();
@@ -98,7 +98,7 @@ function SignIn() {
     if (password === "") {
       return setError("Voce deve informar uma senha");
     }
-    if (!userType) {
+    if (userType === "") {
       return setError("Voce deve informar um tipo de usuario");
     }
     if(adress === "") {
@@ -107,18 +107,18 @@ function SignIn() {
     if(numero === 0) {
       return setError("Voce deve informar um numero");
     }
-    if(city === 0) {
+    if(city === "") {
       return setError("Voce deve informar uma cidade");
     }
     try {
-      setButtonText("Signing up");
+      setButtonText("Cadastrando");
       let response = await AuthApi.Register({
         username: name,
-        email,
-        password,
-        userType,
-        adress,
-        number,
+        email: email,
+        password: password,
+        userType: userType,
+        adress: adress,
+        number: numero,
         city
       });
       if (response.data && response.data.success === false) {
@@ -132,7 +132,7 @@ function SignIn() {
       if (err.response) {
         return setError(err.response.data.msg);
       }
-      return setError("There has been an error.");
+      return setError("Houve um erro");
     }
   };
   return (
@@ -320,7 +320,7 @@ function SignIn() {
                 fontSize='sm'
                 ms={{ base: "0px", md: "0px" }}
                 type='email'
-                placeholder='mail@simmmple.com'
+                placeholder='seuemail@gmail.com'
                 mb='24px'
                 fontWeight='500'
                 size='lg'
@@ -341,7 +341,7 @@ function SignIn() {
                 <Input
                   isRequired={true}
                   fontSize='sm'
-                  placeholder='Min. 8 characters'
+                  placeholder='Minimo 8 caracteres'
                   mb='24px'
                   size='lg'
                   type={show ? "text" : "password"}
@@ -379,7 +379,7 @@ function SignIn() {
               maxW='100%'
               mt='0px'>
               <Text color={textColorDetails} fontWeight='400' fontSize='14px'>
-                Already have account?
+                Já tem uma conta?
                 <NavLink to='/auth/sign-in'>
                   <Text
                     color={textColorBrand}
