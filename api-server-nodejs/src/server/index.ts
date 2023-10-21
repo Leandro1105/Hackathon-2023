@@ -34,7 +34,7 @@ server.use(express.json());
 // Initialize routes middleware
 server.use('/api/users', routes);
 server.use('/api/sessions', sessionRoute);
-server.use('/api/company', sessionRoute);
 server.use('/api/energy-bill', sessionRoute);
+server.use('/api/watter-bill', sessionRoute);
 
 export default server;

@@ -20,9 +20,15 @@ const router = express.Router();
 
 const userSchema = Joi.object().keys({
   email: Joi.string().email().required(),
-  username: Joi.string().alphanum().min(4).max(15)
+  username: Joi.string().alphanum().min(4).max(255)
     .optional(),
   password: Joi.string().required(),
+  cnpj: Joi.string().optional(),
+  usertype: Joi.string().required(),
+  adress: Joi.string().optional(),
+  adress_number: Joi.number().optional(),
+  city: Joi.string().optional(),
+
 });
 
 router.post('/register', (req, res) => {
@@ -71,8 +77,7 @@ router.post('/login', (req, res) => {
     return;
   }
 
-  const { email } = req.body;
-  const { password } = req.body;
+  const { email, password } = req.body;
 
   const userRepository = connection!.getRepository(User);
   const activeSessionRepository = connection!.getRepository(ActiveSession);

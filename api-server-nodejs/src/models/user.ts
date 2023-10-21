@@ -18,8 +18,23 @@ export default class User {
   @Column({ type: 'text', nullable: false })
   email!: string;
 
+  @Column({ type: 'varchar', nullable: true })
+  cnpj?: string;
+
   @Column({ type: 'text', nullable: false })
   password!: string;
+
+  @Column({ type: 'varchar', nullable: false })
+  user_type?: string;
+
+  @Column({ type: 'varchar', nullable: true })
+  adress?: string;
+  
+  @Column({type : 'integer', nullable: true })
+  adress_number!: number;
+
+  @Column({ type: 'varchar', nullable: true })
+  city?: string;
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   date?: string;
