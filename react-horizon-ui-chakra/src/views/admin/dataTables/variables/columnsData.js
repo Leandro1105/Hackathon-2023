@@ -49,19 +49,15 @@ export const columnsDataColumns = [
 
 export const columnsDataComplex = [
   {
-    Header: "NAME",
+    Header: "MÊS",
     accessor: "name",
   },
   {
-    Header: "STATUS",
+    Header: "LITROS",
     accessor: "status",
   },
   {
-    Header: "DATE",
+    Header: "DATA",
     accessor: "date",
-  },
-  {
-    Header: "PROGRESS",
-    accessor: "progress",
   },
 ];

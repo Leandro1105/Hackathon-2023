@@ -35,7 +35,7 @@ export default function Conversion(props) {
         />
 
         <Text color={textColor} fontSize='lg' fontWeight='700'>
-          Tasks
+          Tarefas
         </Text>
         <Menu ms='auto' />
       </Flex>
@@ -47,7 +47,7 @@ export default function Conversion(props) {
             color={textColor}
             fontSize='md'
             textAlign='start'>
-            Landing Page Design
+            Descarte Diário
           </Text>
           <Icon
             ms='auto'
@@ -64,7 +64,7 @@ export default function Conversion(props) {
             color={textColor}
             fontSize='md'
             textAlign='start'>
-            Dashboard Builder
+            Coleta de Resíduos
           </Text>
           <Icon
             ms='auto'
@@ -81,7 +81,7 @@ export default function Conversion(props) {
             color={textColor}
             fontSize='md'
             textAlign='start'>
-            Mobile App Design
+            Plantio de Mudas
           </Text>
           <Icon
             ms='auto'
@@ -91,7 +91,7 @@ export default function Conversion(props) {
             h='24px'
           />
         </Flex>
-        <Flex mb='20px'>
+        {/*<Flex mb='20px'>
           <Checkbox me='16px' colorScheme='brandScheme' />
           <Text
             fontWeight='bold'
@@ -124,7 +124,7 @@ export default function Conversion(props) {
             w='24px'
             h='24px'
           />
-        </Flex>
+  </Flex>*/}
       </Box>
     </Card>
   );

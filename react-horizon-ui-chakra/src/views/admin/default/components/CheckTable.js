@@ -110,7 +110,7 @@ export default function CheckTable(props) {
                           color={textColor}
                           fontSize='sm'
                           fontWeight='700'>
-                          {cell.value}%
+                          {cell.value}
                         </Text>
                       </Flex>
                     );

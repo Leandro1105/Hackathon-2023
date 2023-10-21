@@ -1,26 +1,26 @@
 [
   {
-    "name":"Horizon UI PRO",
-    "status": "Approved",
-    "date": "18 Apr 2022",
+    "name":"Junho",
+    "status": "500",
+    "date": "18 Jun 2023",
     "progress": 75.5  
   },
   {
-    "name":"Horizon UI Free",
-    "status": "Disable",
-    "date": "18 Apr 2022",
+    "name":"Julho",
+    "status": "600",
+    "date": "18 Jul 2023",
     "progress": 25.5  
   },
   {
-    "name":"Marketplace",
-    "status": "Error",
-    "date": "20 May 2021",
+    "name":"Agosto",
+    "status": "450",
+    "date": "20 Ago 2023",
     "progress": 90  
   },
   {
-    "name":"Weekly Updates",
-    "status": "Approved",
-    "date": "12 Jul 2021",
+    "name":"Setembro",
+    "status": "380",
+    "date": "12 Set 2023",
     "progress": 50.5  
   }
 ]
