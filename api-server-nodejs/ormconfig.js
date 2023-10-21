@@ -1,12 +1,12 @@
-  [
+module.exports = [
     {
       "name": "default",
       "type": "postgres",
       "host": "localhost",
       "port": 5432, 
-      "username": "postgres",
-      "password": "lele1105",
-      "database": "HACKATHON",
+      "username": process.env.DB_USER,
+      "password": process.env.DB_PASS,
+      "database": process.env.DB_NAME,
       "synchronize": true,
       "logging": true, 
       "entities": ["src/models/**/*.ts"],
