@@ -59,8 +59,9 @@ function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("user");
-  const [endereco, setEndereco] = useState("")
-  const [cidade, setCidade] = useState("")
+  const [adress, setAdress] = useState("")
+  const [numero, setNumero] = useState(0)
+  const [city, setCity] = useState("")
   const [buttonText, setButtonText] = useState("Sign up");
   const [error, setError] = useState(undefined);
   const history = useHistory();
@@ -89,13 +90,25 @@ function SignIn() {
       event.preventDefault();
     }
     if (name === "") {
-      return setError("You must enter your name.");
+      return setError("Voce deve informar um login");
     }
     if (email === "") {
-      return setError("You must enter your email.");
+      return setError("Voce deve informar um email");
     }
     if (password === "") {
-      return setError("You must enter a password.");
+      return setError("Voce deve informar uma senha");
+    }
+    if (!userType) {
+      return setError("Voce deve informar um tipo de usuario");
+    }
+    if(adress === "") {
+      return setError("Voce deve informar um endereço");
+    }
+    if(numero === 0) {
+      return setError("Voce deve informar um numero");
+    }
+    if(city === 0) {
+      return setError("Voce deve informar uma cidade");
     }
     try {
       setButtonText("Signing up");
@@ -103,6 +116,10 @@ function SignIn() {
         username: name,
         email,
         password,
+        userType,
+        adress,
+        number,
+        city
       });
       if (response.data && response.data.success === false) {
         setButtonText("Sign up");
@@ -214,8 +231,8 @@ function SignIn() {
               onChange={(value) => setUserType(value)}
               >
               <HStack spacing="24px">
-                <Radio value="company">Empresa</Radio>
-                <Radio value="user">Usuário</Radio>
+                <Radio value="company">CNPJ</Radio>
+                <Radio value="user">CPF</Radio>
               </HStack>
               </RadioGroup>
               <FormLabel
@@ -237,7 +254,31 @@ function SignIn() {
                 fontWeight='500'
                 size='lg'
                 onChange={(event) => {
-                  setEndereco(event.target.value);
+                  setAdress(event.target.value);
+                  setError(undefined);
+                }}
+              />
+              <FormLabel
+                display='flex'
+                ms='4px'
+                fontSize='sm'
+                fontWeight='500'
+                color={textColor}
+                mb='8px'>
+                Número<Text color={brandStars}>*</Text>
+              </FormLabel>
+              <Input
+                isRequired={true}
+                variant='auth'
+                fontSize='sm'
+                ms={{ base: "0px", md: "0px" }}
+                placeholder='Número'
+                mb='24px'
+                fontWeight='500'
+                size='lg'
+                type="number"
+                onChange={(event) => {
+                  setNumero(event.target.value);
                   setError(undefined);
                 }}
               />
@@ -255,12 +296,12 @@ function SignIn() {
                 variant='auth'
                 fontSize='sm'
                 ms={{ base: "0px", md: "0px" }}
-                placeholder='Endereço'
+                placeholder='Cidade'
                 mb='24px'
                 fontWeight='500'
                 size='lg'
                 onChange={(event) => {
-                  setCidade(event.target.value);
+                  setCity(event.target.value);
                   setError(undefined);
                 }}
               />

@@ -40,19 +40,11 @@ export default function Footer() {
           <Link
             mx='3px'
             color={textColor}
-            href='https://www.simmmple.com'
+            href='https://www.unifacef.com.br'
             target='_blank'
             fontWeight='700'>
-            Simmmple!
-          </Link>
-          - Coded by 
-          <Link
-            mx='3px'
-            color={textColor}
-            href='https://appseed.us'
-            target='_blank'>
-            AppSeed
-          </Link>           
+            Uni-FACEF
+          </Link>         
         </Text>
       </Text>
       <List display='flex'>
