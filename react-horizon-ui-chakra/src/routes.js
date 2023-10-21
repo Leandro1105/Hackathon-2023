@@ -26,14 +26,14 @@ import SignUp from "views/auth/signUp/index.jsx";
 
 const routes = [
   {
-    name: "Main Dashboard",
+    name: "Dashboard",
     layout: "/admin",
     path: "/default",
     icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
     component: MainDashboard,
   },
   {
-    name: "NFT Marketplace",
+    name: "Parceiros/Ranking",
     layout: "/admin",
     path: "/nft-marketplace",
     icon: (

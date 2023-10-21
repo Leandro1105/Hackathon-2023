@@ -48,19 +48,14 @@ export default function TotalSpent(props) {
       {...rest}>
       <Flex justify='space-between' ps='0px' pe='20px' pt='5px'>
         <Flex align='center' w='100%'>
-          <Button
-            bg={boxBg}
-            fontSize='sm'
-            fontWeight='500'
-            color={textColorSecondary}
-            borderRadius='7px'>
-            <Icon
-              as={MdOutlineCalendarToday}
-              color={textColorSecondary}
-              me='4px'
-            />
-            This month
-          </Button>
+        <Text
+          me='auto'
+          color={textColor}
+          fontSize='xl'
+          fontWeight='700'
+          lineHeight='100%'>
+          Energia
+        </Text>
           <Button
             ms='auto'
             align='center'
@@ -79,14 +74,14 @@ export default function TotalSpent(props) {
         </Flex>
       </Flex>
       <Flex w='100%' flexDirection={{ base: "column", lg: "row" }}>
-        <Flex flexDirection='column' me='20px' mt='28px'>
+        <Flex flexDirection='column' me='22px' mt='28px'>
           <Text
             color={textColor}
             fontSize='34px'
             textAlign='start'
             fontWeight='700'
             lineHeight='100%'>
-            $37.5K
+            R$ 2.280
           </Text>
           <Flex align='center' mb='20px'>
             <Text
@@ -95,12 +90,12 @@ export default function TotalSpent(props) {
               fontWeight='500'
               mt='4px'
               me='12px'>
-              Total Spent
+              Total
             </Text>
             <Flex align='center'>
               <Icon as={RiArrowUpSFill} color='green.500' me='2px' mt='2px' />
               <Text color='green.500' fontSize='sm' fontWeight='700'>
-                +2.45%
+                -8.75%
               </Text>
             </Flex>
           </Flex>
@@ -108,7 +103,7 @@ export default function TotalSpent(props) {
           <Flex align='center'>
             <Icon as={IoCheckmarkCircle} color='green.500' me='4px' />
             <Text color='green.500' fontSize='md' fontWeight='700'>
-              On track
+              Positivo
             </Text>
           </Flex>
         </Flex>

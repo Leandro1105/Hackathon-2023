@@ -304,7 +304,7 @@ export const lineChartOptionsTotalSpent = {
   },
   xaxis: {
     type: "numeric",
-    categories: ["SEP", "OCT", "NOV", "DEC", "JAN", "FEB"],
+    categories: ["ABR", "MAI", "JUN", "JUL", "AGO", "SET"],
     labels: {
       style: {
         colors: "#A3AED0",

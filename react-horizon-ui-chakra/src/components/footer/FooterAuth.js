@@ -43,57 +43,10 @@ export default function Footer() {
             href='https://www.unifacef.com.br'
             target='_blank'
             fontWeight='700'>
-            Uni-FACEF
+            HACKATHON UNI-FACEF
           </Link>         
         </Text>
       </Text>
-      <List display='flex'>
-        <ListItem
-          me={{
-            base: "20px",
-            md: "44px",
-          }}>
-          <Link
-            fontWeight='500'
-            color={linkColor}
-            target='_blank'
-            href='https://github.com/app-generator/react-horizon-ui-chakra'>
-            Source Code
-          </Link>
-        </ListItem>
-        <ListItem
-          me={{
-            base: "20px",
-            md: "44px",
-          }}>
-          <Link
-            fontWeight='500'
-            color={linkColor}
-            href='https://appseed.us/support/'>
-            Support
-          </Link>
-        </ListItem>
-        <ListItem
-          me={{
-            base: "20px",
-            md: "44px",
-          }}>
-          <Link
-            fontWeight='500'
-            color={linkColor}
-            href='https://simmmple.com/'>
-            Simmmple
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link
-            fontWeight='500'
-            color={linkColor}
-            href='https://appseed.us'>
-            TESTE
-          </Link>
-        </ListItem>
-      </List>
     </Flex>
   );
 }
