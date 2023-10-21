@@ -46,16 +46,21 @@ import { useAuth } from "../../../auth-context/auth.context";
 import AuthApi from "../../../api/auth";
 import { HSeparator } from "components/separator/Separator";
 import DefaultAuth from "layouts/auth/Default";
+import {RadioGroup, HStack, Radio} from "@chakra-ui/react";
 // Assets
 import illustration from "assets/img/auth/auth.png";
 import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
+import { Switch } from "react-router-dom/cjs/react-router-dom.min";
 
 function SignIn() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userType, setUserType] = useState("user");
+  const [endereco, setEndereco] = useState("")
+  const [cidade, setCidade] = useState("")
   const [buttonText, setButtonText] = useState("Sign up");
   const [error, setError] = useState(undefined);
   const history = useHistory();
@@ -129,7 +134,7 @@ function SignIn() {
         flexDirection='column'>
         <Box me='auto'>
           <Heading color={textColor} fontSize='36px' mb='10px'>
-            Sign UP
+            Cadastre-se
           </Heading>
           <Text
             mb='36px'
@@ -137,7 +142,7 @@ function SignIn() {
             color={textColorSecondary}
             fontWeight='400'
             fontSize='md'>
-            Open-source Full-stack Starter built with React and Chakra
+            Cadastre-se no sistema para acessar as informações
           </Text>
         </Box>
         <Flex
@@ -179,19 +184,83 @@ function SignIn() {
                 fontWeight='500'
                 color={textColor}
                 mb='8px'>
-                Username<Text color={brandStars}>*</Text>
+                Login<Text color={brandStars}>*</Text>
               </FormLabel>
               <Input
                 isRequired={true}
                 variant='auth'
                 fontSize='sm'
                 ms={{ base: "0px", md: "0px" }}
-                placeholder='Username'
+                placeholder='Login'
                 mb='24px'
                 fontWeight='500'
                 size='lg'
                 onChange={(event) => {
                   setName(event.target.value);
+                  setError(undefined);
+                }}
+              />
+              <FormLabel
+                display='flex'
+                ms='4px'
+                fontSize='sm'
+                fontWeight='500'
+                color={textColor}
+                mb='8px'>
+              Tipo de usuário<Text color={brandStars}></Text>
+              </FormLabel>
+              <RadioGroup
+              value={userType}
+              onChange={(value) => setUserType(value)}
+              >
+              <HStack spacing="24px">
+                <Radio value="company">Empresa</Radio>
+                <Radio value="user">Usuário</Radio>
+              </HStack>
+              </RadioGroup>
+              <FormLabel
+                display='flex'
+                ms='4px'
+                fontSize='sm'
+                fontWeight='500'
+                color={textColor}
+                mb='8px'>
+                Endereço<Text color={brandStars}>*</Text>
+              </FormLabel>
+              <Input
+                isRequired={true}
+                variant='auth'
+                fontSize='sm'
+                ms={{ base: "0px", md: "0px" }}
+                placeholder='Endereço'
+                mb='24px'
+                fontWeight='500'
+                size='lg'
+                onChange={(event) => {
+                  setEndereco(event.target.value);
+                  setError(undefined);
+                }}
+              />
+              <FormLabel
+                display='flex'
+                ms='4px'
+                fontSize='sm'
+                fontWeight='500'
+                color={textColor}
+                mb='8px'>
+                Cidade<Text color={brandStars}>*</Text>
+              </FormLabel>
+              <Input
+                isRequired={true}
+                variant='auth'
+                fontSize='sm'
+                ms={{ base: "0px", md: "0px" }}
+                placeholder='Endereço'
+                mb='24px'
+                fontWeight='500'
+                size='lg'
+                onChange={(event) => {
+                  setCidade(event.target.value);
                   setError(undefined);
                 }}
               />
@@ -225,7 +294,7 @@ function SignIn() {
                 fontWeight='500'
                 color={textColor}
                 display='flex'>
-                Password<Text color={brandStars}>*</Text>
+                Senha<Text color={brandStars}>*</Text>
               </FormLabel>
               <InputGroup size='md'>
                 <Input
@@ -289,3 +358,5 @@ function SignIn() {
 }
 
 export default SignIn;
+
+

@@ -78,6 +78,7 @@ router.post('/login', (req, res) => {
   const activeSessionRepository = connection!.getRepository(ActiveSession);
   userRepository.findOne({ email }).then((user) => {
     if (!user) {
+      console.log(user)
       return res.json({ success: false, msg: 'Wrong credentials' });
     }
 
