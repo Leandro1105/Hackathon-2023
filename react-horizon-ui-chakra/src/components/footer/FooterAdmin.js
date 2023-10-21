@@ -45,12 +45,6 @@ export default function Footer() {
             target='_blank'>
             HACKATHON
           </Link> 
-          <Link
-            mx='3px'
-            color={textColor}
-            href='https://appseed.us'
-            target='_blank'>
-          </Link> 
         </Text>
       </Text>
       <List display='flex'>

@@ -98,7 +98,7 @@ export default function Footer() {
             fontWeight='500'
             color={linkColor}
             href='https://appseed.us'>
-            AppSeed
+            TESTE
           </Link>
         </ListItem>
       </List>
