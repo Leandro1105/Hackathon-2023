@@ -121,11 +121,12 @@ function SignIn() {
         username: name,
         password: password,
         cnpj: cnpj,
-        userType: userType,
+        usertype: userType,
         adress: adress,
         adress_number: numero,
         city
       });
+      console.log(response)
       if (response.data && response.data.success === false) {
         setButtonText("Sign up");
         return setError(response.data.msg);
@@ -236,8 +237,12 @@ function SignIn() {
               onChange={(value) => setUserType(value)}
               >
               <HStack spacing="24px">
-                <Radio value="company">CNPJ</Radio>
-                <Radio value="user">CPF</Radio>
+                <Radio value="company" onChange={() => setUserType("company")}>
+                  CNPJ
+                </Radio>
+                <Radio value="user" onChange={() => setUserType("user")}>
+                  CPF
+                </Radio>
               </HStack>
               </RadioGroup>
               <FormLabel

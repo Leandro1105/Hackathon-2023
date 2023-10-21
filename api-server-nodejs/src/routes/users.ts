@@ -30,6 +30,11 @@ const userSchema = Joi.object().keys({
   city: Joi.string().optional(),
 });
 
+const userLoginSchema = Joi.object().keys({
+  email: Joi.string().email().required(),
+  password: Joi.string().required(),
+});
+
 router.post('/register', (req, res) => {
   // Joy Validation
   const result = userSchema.validate(req.body);
@@ -71,10 +76,10 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
   // Joy Validation
-  const result = userSchema.validate(req.body);
+  const result = userLoginSchema.validate(req.body);
   if (result.error) {
     res.status(422).json({
-      success: false,
+      success: false,   
       msg: `Validation err: ${result.error.details[0].message}`,
     });
     return;
