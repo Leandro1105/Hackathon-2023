@@ -59,6 +59,7 @@ function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("user");
+  const [cnpj, setCnpj] = useState("")
   const [adress, setAdress] = useState("")
   const [numero, setNumero] = useState(0)
   const [city, setCity] = useState("")
@@ -90,7 +91,7 @@ function SignIn() {
       event.preventDefault();
     }
     if (name === "") {
-      return setError("Voce deve informar um login");
+      return setError("Voce deve informar um nome");
     }
     if (email === "") {
       return setError("Voce deve informar um email");
@@ -110,15 +111,19 @@ function SignIn() {
     if(city === "") {
       return setError("Voce deve informar uma cidade");
     }
+    if(cnpj === ""){
+      return setError("Voce deve informar um cnpj");  
+    }
     try {
       setButtonText("Cadastrando");
       let response = await AuthApi.Register({
-        username: name,
         email: email,
+        username: name,
         password: password,
+        cnpj: cnpj,
         userType: userType,
         adress: adress,
-        number: numero,
+        adress_number: numero,
         city
       });
       if (response.data && response.data.success === false) {
@@ -201,14 +206,14 @@ function SignIn() {
                 fontWeight='500'
                 color={textColor}
                 mb='8px'>
-                Login<Text color={brandStars}>*</Text>
+                Nome<Text color={brandStars}>*</Text>
               </FormLabel>
               <Input
                 isRequired={true}
                 variant='auth'
                 fontSize='sm'
                 ms={{ base: "0px", md: "0px" }}
-                placeholder='Login'
+                placeholder='Digite seu nome'
                 mb='24px'
                 fontWeight='500'
                 size='lg'
@@ -235,6 +240,36 @@ function SignIn() {
                 <Radio value="user">CPF</Radio>
               </HStack>
               </RadioGroup>
+              <FormLabel
+                display='flex'
+                ms='4px'
+                fontSize='sm'
+                fontWeight='500'
+                color={textColor}
+                mb='8px'
+                style={{
+                  display: userType === 'company' ? 'block' : 'none'
+                }}
+              >
+                CNPJ<Text color={brandStars}>*</Text>
+              </FormLabel>
+              <Input
+                isRequired={userType === 'company'}
+                variant='auth'
+                fontSize='sm'
+                ms={{ base: "0px", md: "0px" }}
+                placeholder='CNPJ'
+                mb='24px'
+                fontWeight='500'
+                size='lg'
+                onChange={(event) => {
+                  setCnpj(event.target.value);
+                  setError(undefined);
+                }}
+                style={{
+                  display: userType === 'company' ? 'block' : 'none'
+                }}
+              />
               <FormLabel
                 display='flex'
                 ms='4px'

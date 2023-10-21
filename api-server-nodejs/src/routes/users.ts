@@ -28,7 +28,6 @@ const userSchema = Joi.object().keys({
   adress: Joi.string().optional(),
   adress_number: Joi.number().optional(),
   city: Joi.string().optional(),
-
 });
 
 router.post('/register', (req, res) => {
@@ -42,7 +41,7 @@ router.post('/register', (req, res) => {
     return;
   }
 
-  const { username, email, password } = req.body;
+  const {email, username, password, cnpj, usertype, adress, adress_number, city} = req.body;
 
   const userRepository = connection!.getRepository(User);
 
@@ -53,10 +52,14 @@ router.post('/register', (req, res) => {
       bcrypt.genSalt(10, (_err, salt) => {
         bcrypt.hash(password, salt).then((hash) => {
           const user = new User()
-          user.username = username
           user.email = email
+          user.username = username
           user.password = hash
-
+          user.cnpj = cnpj
+          user.user_type = usertype
+          user.adress = adress
+          user.adress_number = adress_number
+          user.city = city
           userRepository.save(user).then((u) => {
             res.json({ success: true, userID: u.id, msg: 'The user was successfully registered' });
           });
