@@ -33,15 +33,21 @@ export default function WeeklyRevenue(props) {
     { bg: "whiteAlpha.100" }
   );
   return (
-    <Card align='center' direction='column' w='100%' {...rest}>
-      <Flex align='center' w='100%' px='15px' py='10px'>
+    <Card  justifyContent='center' 
+    align='center' 
+    direction='column' 
+    w='100%' 
+    mb='0px'
+    {...rest}>
+      <Flex justify='space-between' ps='0px' pe='20px' pt='5px'>
+      <Flex align='center' w='100%'>
         <Text
           me='auto'
           color={textColor}
           fontSize='xl'
           fontWeight='700'
           lineHeight='100%'>
-          Água
+          Média de Consumo - Água
         </Text>
         <Button
           align='center'
@@ -58,8 +64,22 @@ export default function WeeklyRevenue(props) {
           <Icon as={MdBarChart} color={iconColor} w='24px' h='24px' />
         </Button>
       </Flex>
+      </Flex>
+      
+      <Flex w='100%' flexDirection={{ base: "column", lg: "row" }}>
+        <Flex flexDirection='column' me='22px' mt='28px'>
+        <Text
+            color={textColor}
+            fontSize='34px'
+            textAlign='start'
+            fontWeight='650'
+            lineHeight='100%'>
+            890 L
+          </Text>
+        </Flex>
+       </Flex>
 
-      <Box h='240px' mt='auto'>
+      <Box h='210px' mt='auto'>
         <BarChart
           chartData={barChartDataConsumption}
           chartOptions={barChartOptionsConsumption}

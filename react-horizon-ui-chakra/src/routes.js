@@ -10,6 +10,12 @@ import {
   MdOutlineShoppingCart,
   MdLogin,
   MdAdminPanelSettings,
+  MdWater,
+  MdLight,
+  MdLightbulb,
+  MdLightMode,
+  MdLightbulbOutline,
+  MdFlashlightOn
 } from "react-icons/md";
 
 // Admin Imports
@@ -33,6 +39,20 @@ const routes = [
     path: "/default",
     icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
     component: MainDashboard,
+  },
+  {
+    name: "Conta de Água",
+    layout: "/admin",
+    path: "/wateraccount",
+    icon: <Icon as={MdWater} width='20px' height='20px' color='inherit' />,
+    component: WaterAccount,
+  },
+  {
+    name: "Conta de Energia",
+    layout: "/admin",
+    path: "/energyaccount",
+    icon: <Icon as={MdLightbulb} width='20px' height='20px' color='inherit' />,
+    component: EnergyAccount,
   },
   {
     name: "Parceiros/Ranking",
@@ -62,20 +82,6 @@ const routes = [
     path: "/profile",
     icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
     component: Profile,
-  },
-  {
-    name: "Conta de água",
-    layout: "/admin",
-    path: "/wateraccount",
-    icon: <Icon as={MdWater} width='20px' height='20px' color='inherit' />,
-    component: WaterAccount,
-  },
-  {
-    name: "Conta de energia",
-    layout: "/admin",
-    path: "/energyaccount",
-    icon: <Icon as={MdWater} width='20px' height='20px' color='inherit' />,
-    component: EnergyAccount,
   },
   {
     name: "Signin",

@@ -47,14 +47,14 @@ export default function TotalSpent(props) {
       mb='0px'
       {...rest}>
       <Flex justify='space-between' ps='0px' pe='20px' pt='5px'>
-        <Flex align='center' w='100%'>
+        <Flex align='center' w='100%' mb='10px'>
         <Text
           me='auto'
           color={textColor}
           fontSize='xl'
           fontWeight='700'
           lineHeight='100%'>
-          Energia
+          Média de Consumo - Energia
         </Text>
           <Button
             ms='auto'
@@ -81,7 +81,7 @@ export default function TotalSpent(props) {
             textAlign='start'
             fontWeight='700'
             lineHeight='100%'>
-            R$ 2.280
+            KWh 2.280
           </Text>
           <Flex align='center' mb='20px'>
             <Text

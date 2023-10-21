@@ -19,38 +19,30 @@ export const columnsDataDevelopment = [
 
 export const columnsDataCheck = [
   {
-    Header: "NAME",
+    Header: "MÊS",
     accessor: "name",
   },
   {
-    Header: "PROGRESS",
-    accessor: "progress",
-  },
-  {
-    Header: "QUANTITY",
+    Header: "KWh",
     accessor: "quantity",
   },
   {
-    Header: "DATE",
+    Header: "DATA",
     accessor: "date",
   },
 ];
 
 export const columnsDataColumns = [
   {
-    Header: "NAME",
+    Header: "MÊS",
     accessor: "name",
   },
   {
-    Header: "PROGRESS",
-    accessor: "progress",
-  },
-  {
-    Header: "QUANTITY",
+    Header: "KWh",
     accessor: "quantity",
   },
   {
-    Header: "DATE",
+    Header: "DATA",
     accessor: "date",
   },
 ];

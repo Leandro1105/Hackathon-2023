@@ -38,6 +38,7 @@ import MiniCalendar from "components/calendar/MiniCalendar";
 import MiniStatistics from "components/card/MiniStatistics";
 import IconBox from "components/icons/IconBox";
 import React from "react";
+import { IoMdMedal } from "react-icons/io";
 import {
   MdAddTask,
   MdAttachMoney,
@@ -87,32 +88,21 @@ export default function UserReports() {
             <IconBox
               w='56px'
               h='56px'
-              bg={boxBg}
+              bg='linear-gradient(90deg, #f0c808 0%, #f9c74f 100%)'
+              //bg={boxBg}
               icon={
-                <Icon w='32px' h='32px' as={MdAttachMoney} color={brandColor} />
+                <Icon w='32px' h='32px' as={IoMdMedal} color='white' />
               }
             />
           }
           name='Selo'
-          value='7 - Diamante'
+          value='7 - Ouro'
         />
-        <MiniStatistics growth='+23%' name='Pontos' value='750' />
+        <MiniStatistics growth='+28%' name='Score' value='750' />
         <MiniStatistics
           endContent={
             <Flex me='-16px' mt='10px'>
-              <FormLabel htmlFor='balance'>
-                <Avatar src={Usa} />
-              </FormLabel>
-              <Select
-                id='balance'
-                variant='mini'
-                mt='5px'
-                me='0px'
-                defaultValue='usd'>
-                <option value='usd'>USD</option>
-                <option value='eur'>EUR</option>
-                <option value='gba'>GBA</option>
-              </Select>
+              
             </Flex>
           }
           name='Your balance'

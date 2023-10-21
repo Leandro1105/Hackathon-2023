@@ -103,7 +103,7 @@ export default function AdminNavbar(props) {
           <Breadcrumb>
             <BreadcrumbItem color={secondaryText} fontSize='sm' mb='5px'>
               <BreadcrumbLink href='#' color={secondaryText}>
-                Pages
+                Páginas
               </BreadcrumbLink>
             </BreadcrumbItem>
 
@@ -134,13 +134,13 @@ export default function AdminNavbar(props) {
           </Link>
         </Box>
         <Box ms='auto' w={{ sm: "100%", md: "unset" }}>
-          <AdminNavbarLinks
+          {<AdminNavbarLinks
             onOpen={props.onOpen}
             logoText={props.logoText}
             secondary={props.secondary}
             fixed={props.fixed}
             scrolled={scrolled}
-          />
+          />}
         </Box>
       </Flex>
       {secondary ? <Text color='white'>{message}</Text> : null}
@@ -151,7 +151,7 @@ export default function AdminNavbar(props) {
 AdminNavbar.propTypes = {
   brandText: PropTypes.string,
   variant: PropTypes.string,
-  secondary: PropTypes.bool,
-  fixed: PropTypes.bool,
+  secondary: false,
+  fixed: false,
   onOpen: PropTypes.func,
 };
