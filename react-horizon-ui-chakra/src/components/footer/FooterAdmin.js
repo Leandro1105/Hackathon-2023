@@ -41,47 +41,19 @@ export default function Footer() {
           <Link
             mx='3px'
             color={textColor}
-            href='https://www.simmmple.com'
+            href='https://www.unifacef.com.br/'
             target='_blank'>
-            Simmmple
+            HACKATHON
           </Link> 
-          - Coded by 
           <Link
             mx='3px'
             color={textColor}
             href='https://appseed.us'
             target='_blank'>
-            AppSeed
           </Link> 
         </Text>
       </Text>
       <List display='flex'>
-      <ListItem
-          me={{
-            base: "20px",
-            md: "44px",
-          }}>
-          <Link
-            fontWeight='500'
-            color={textColor}
-            target='_blank'
-            href='https://github.com/app-generator/react-horizon-ui-chakra'>
-            Source Code
-          </Link>
-        </ListItem>        
-        <ListItem
-          me={{
-            base: "20px",
-            md: "44px",
-          }}>
-          <Link
-            fontWeight='500'
-            color={textColor}
-            target='_blank'
-            href='https://appseed.us/support/'>
-            Support
-          </Link>
-        </ListItem>
       </List>
     </Flex>
   );
