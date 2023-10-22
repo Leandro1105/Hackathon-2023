@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
 @Entity()
-export default class Company {
+export default class WaterBill {
   constructor() {
     if (!this.id) {
       this.id = uuid()
@@ -12,12 +12,15 @@ export default class Company {
   @PrimaryGeneratedColumn("uuid")
   id!: string;
 
-  @Column({type : 'varchar'})
-  name!: string;
+  @Column({type : 'integer'})
+  liter!: number;
 
   @Column({ type: 'decimal' })
-  type!: string;
+  value!: number;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  created_at!: string;
+  @Column({ type: 'date' })
+  date!: Date;
+
+  @Column({type: 'varchar'})
+  user_id!: string;
 }

@@ -1,10 +1,10 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class createEnergyBill1697909070059 implements MigrationInterface {
+export class createWatterBill1697927730798 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
-            name: "energy_bill",
+            name: "water_bill",
             columns: [
                 {
                     name: "id",
@@ -13,7 +13,7 @@ export class createEnergyBill1697909070059 implements MigrationInterface {
                     isGenerated: true,
                 },
                 {
-                    name: "watts",
+                    name: "liter",
                     type: "integer",
                     isNullable: false,
                 },
@@ -29,12 +29,18 @@ export class createEnergyBill1697909070059 implements MigrationInterface {
                     type: "date",
                     isNullable: false,
                 },
+                {
+                    name: "user_id",
+                    type: "uuid",
+                    isNullable: false,
+                },
             ],
         }));
+
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("energy_bill");
+        await queryRunner.dropTable("water_bill");
     }
 
 }
