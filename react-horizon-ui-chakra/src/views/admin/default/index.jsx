@@ -92,8 +92,8 @@ export default function UserReports() {
           name='Selo'
           value='7 - Ouro'
         />
-        <MiniStatistics growth='+7%' name='Energia' value='1298 KWh' />
-        <MiniStatistics growth='+2%' name='Água' value='671 L' />
+        <MiniStatistics growth='+7%' name='Gasto de Energia no Mês' value='1298 KWh' />
+        <MiniStatistics growth='+2%' name='Gasto de Água no Mês' value='671 L' />
         <MiniStatistics
           startContent={
             <IconBox
@@ -117,7 +117,7 @@ export default function UserReports() {
               }
             />
           }
-          name='Empregado'
+          name='Empregados'
           value='155'
         />
       </SimpleGrid>

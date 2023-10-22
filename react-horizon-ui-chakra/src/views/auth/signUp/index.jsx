@@ -44,15 +44,12 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../../auth-context/auth.context";
 import AuthApi from "../../../api/auth";
-import { HSeparator } from "components/separator/Separator";
 import DefaultAuth from "layouts/auth/Default";
 import {RadioGroup, HStack, Radio} from "@chakra-ui/react";
 // Assets
 import illustration from "assets/img/auth/auth.png";
-import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
-import { Switch } from "react-router-dom/cjs/react-router-dom.min";
 
 function SignIn() {
   const [name, setName] = useState("");
@@ -66,8 +63,6 @@ function SignIn() {
   const [buttonText, setButtonText] = useState("Cadastrar");
   const [error, setError] = useState(undefined);
   const history = useHistory();
-  const { setUser } = useAuth();
-  const { user } = useAuth();
   // Chakra color mode
   const textColor = useColorModeValue("navy.700", "white");
   const textColorSecondary = "gray.400";
@@ -111,7 +106,7 @@ function SignIn() {
     if(city === "") {
       return setError("Voce deve informar uma cidade");
     }
-    if(cnpj === "" && userType === "user"){
+    if(cnpj === "" && userType === "company"){
       return setError("Voce deve informar um cnpj");  
     }
     try {
@@ -124,7 +119,7 @@ function SignIn() {
         usertype: userType,
         adress: adress,
         adress_number: numero,
-        city
+        city: city
       });
       console.log(response)
       if (response.data && response.data.success === false) {

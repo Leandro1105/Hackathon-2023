@@ -1,7 +1,7 @@
 import React,{useState} from "react";
-
 import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+
 // Chakra imports
 import {
   Box,
@@ -19,11 +19,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 // Custom components
-import { HSeparator } from "components/separator/Separator";
 import DefaultAuth from "layouts/auth/Default";
 // Assets
 import illustration from "assets/img/auth/auth.png";
-import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
 import { useAuth } from "../../../auth-context/auth.context";
@@ -77,6 +75,10 @@ function SignIn() {
         setButtonText("Sign in");
         return setError(response.data.msg);
       }
+      const userId = response.data.user.id;
+      localStorage.setItem('userId', userId);
+      console.log(response)
+      console.log(userId)
       return setProfile(response);
     } catch (err) {
       console.log(err);

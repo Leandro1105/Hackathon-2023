@@ -14,7 +14,6 @@ import AuthApi from "../../../api/auth";
 export default function WaterAccount() {
   const [value, setValue] = useState(0);
   const [date, setDate] = useState(new Date());
-  const [companyId, setCompanyId] = useState(0);
   const [utilization, setUtilization] = useState(0);
   const [error, setError] = useState(undefined);
   const [buttonText, setButtonText] = useState("Cadastrar");
@@ -24,9 +23,6 @@ export default function WaterAccount() {
   const register = async (event) => {
     if (event) {
       event.preventDefault();
-    }
-    if (companyId === 0) {
-      return setError("Você deve inserir um código de empresa");
     }
     if (!date) {
       return setError("Você deve inserir uma data da conta");
@@ -39,12 +35,15 @@ export default function WaterAccount() {
     }
     try {
       setButtonText("Cadastrando");
+      const userId = localStorage.getItem('userId');
       let response = await AuthApi.Register({
-        companyid: companyId,
+        companyid: userId,
         date: date,
         utilization: utilization,
         value: value,
       });
+      console.log(response)
+      console.log(userId)
       if (response.data && response.data.success === false) {
         setButtonText("Cadastrar");
         return setError(response.data.msg);

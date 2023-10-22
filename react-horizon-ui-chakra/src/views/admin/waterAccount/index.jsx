@@ -25,9 +25,6 @@ export default function WaterAccount() {
     if (event) {
       event.preventDefault();
     }
-    if (companyId === 0) {
-      return setError("Você deve inserir um código de empresa");
-    }
     if (!date) {
       return setError("Você deve inserir uma data da conta");
     }
@@ -39,8 +36,10 @@ export default function WaterAccount() {
     }
     try {
       setButtonText("Cadastrando");
+      const userId = localStorage.getItem('userId');
+      console.log(userId)
       let response = await AuthApi.Register({
-        companyid: companyId,
+        companyid: userId,
         date: date,
         utilization: utilization,
         value: value,
