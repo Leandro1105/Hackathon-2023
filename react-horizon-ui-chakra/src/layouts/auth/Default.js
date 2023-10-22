@@ -17,9 +17,9 @@ function AuthIllustration(props) {
       <Flex
         h={{
           sm: "initial",
-          md: "unset",
-          lg: "100vh",
-          xl: "97vh",
+          md: "initial",
+          lg: "initial",
+          xl: "initial",
         }}
         w='100%'
         maxW={{ md: "66%", lg: "1313px" }}
@@ -58,7 +58,7 @@ function AuthIllustration(props) {
           h='100%'
           minH='100vh'
           w={{ lg: "50vw", "2xl": "44vw" }}
-          position='absolute'
+          position='fixed'
           right='0px'>
           <Flex
             bg={`url(${illustrationBackground})`}

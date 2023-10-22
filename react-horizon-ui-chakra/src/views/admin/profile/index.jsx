@@ -32,8 +32,8 @@ export default function Overview() {
         <Banner
           gridArea='1 / 1 / 2 / 2'
           banner={banner}
-          //avatar={avatar}
-          name='Irroba'
+          avatar={avatar}
+          name='Sua Empresa'
           job='Desenvolvedora de software'
           posts='17'
           followers='9.7k'
