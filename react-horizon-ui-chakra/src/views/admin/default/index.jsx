@@ -43,6 +43,8 @@ import {
   MdAddTask,
   MdAttachMoney,
   MdBarChart,
+  MdCarCrash,
+  MdCarRepair,
   MdFileCopy,
 } from "react-icons/md";
 import CheckTable from "views/admin/default/components/CheckTable";
@@ -80,8 +82,8 @@ export default function UserReports() {
               }
             />
           }
-          name='Earnings'
-          value='$350.4'
+          name='Score'
+          value='750'
         />
         <MiniStatistics
           startContent={
@@ -98,27 +100,19 @@ export default function UserReports() {
           name='Selo'
           value='7 - Ouro'
         />
-        <MiniStatistics growth='+28%' name='Score' value='750' />
-        <MiniStatistics
-          endContent={
-            <Flex me='-16px' mt='10px'>
-              
-            </Flex>
-          }
-          name='Your balance'
-          value='$1,000'
-        />
+        <MiniStatistics growth='+7%' name='Energia' value='1298 KWh' />
+        <MiniStatistics growth='+2%' name='Água' value='671 L KWh' />
         <MiniStatistics
           startContent={
             <IconBox
               w='56px'
               h='56px'
               bg='linear-gradient(90deg, #4481EB 0%, #04BEFE 100%)'
-              icon={<Icon w='28px' h='28px' as={MdAddTask} color='white' />}
+              icon={<Icon w='28px' h='28px' as={MdCarRepair} color='white' />}
             />
           }
-          name='New Tasks'
-          value='154'
+          name='Carona Amiga'
+          value='54'
         />
         <MiniStatistics
           startContent={
@@ -131,8 +125,8 @@ export default function UserReports() {
               }
             />
           }
-          name='Total Projects'
-          value='2935'
+          name='Empregado'
+          value='155'
         />
       </SimpleGrid>
 
