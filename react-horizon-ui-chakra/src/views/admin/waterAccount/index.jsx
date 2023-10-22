@@ -1,23 +1,14 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 import {
   Box,
   Button,
-  Checkbox,
   Flex,
   FormControl,
   FormLabel,
-  Heading,
-  Icon,
   Input,
-  InputGroup,
-  InputRightElement,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import DefaultAuth from "layouts/auth/Default";
-import { useAuth } from "../../../auth-context/auth.context";
 import AuthApi from "../../../api/auth";
 
 export default function WaterAccount() {
@@ -35,16 +26,16 @@ export default function WaterAccount() {
       event.preventDefault();
     }
     if (companyId === 0) {
-      return setError("Voce deve inserir um código de empresa");
+      return setError("Você deve inserir um código de empresa");
     }
     if (!date) {
-      return setError("Voce deve inserir uma data da conta");
+      return setError("Você deve inserir uma data da conta");
     }
-    if (utilization) {
-      return setError("Voce deve inserir a utilizacao");
+    if (!utilization) {
+      return setError("Você deve inserir a utilização");
     }
-    if (value) {
-      return setError("Voce deve inserir o valor da conta");
+    if (!value) {
+      return setError("Você deve inserir o valor da conta");
     }
     try {
       setButtonText("Cadastrando");
@@ -52,7 +43,7 @@ export default function WaterAccount() {
         companyid: companyId,
         date: date,
         utilization: utilization,
-        value: value
+        value: value,
       });
       if (response.data && response.data.success === false) {
         setButtonText("Cadastrar");
@@ -93,18 +84,6 @@ export default function WaterAccount() {
           >
             Cadastre sua conta de água abaixo
           </Text>
-        </Box>
-        <Flex
-          zIndex="2"
-          direction="column"
-          w={{ base: "100%", md: "420px" }}
-          maxW="100%"
-          background="transparent"
-          borderRadius="15px"
-          mx={{ base: "auto", lg: "unset" }}
-          me="auto"
-          mb={{ base: "20px", md: "auto" }}
-        >
           <Flex
             zIndex="2"
             direction="column"
@@ -136,14 +115,14 @@ export default function WaterAccount() {
                 color={textColor}
                 mb="8px"
               >
-              Data da conta<Text color={brandStars}>*</Text>
+                Data da conta<Text color={brandStars}>*</Text>
               </FormLabel>
               <Input
                 isRequired={true}
                 variant="auth"
                 fontSize="sm"
                 ms={{ base: "0px", md: "0px" }}
-                type="date" // Usando o tipo 'date'
+                type="date" // Date
                 placeholder="Digite a data da conta (YYYY-MM-DD)"
                 mb="24px"
                 defaultValue={date}
@@ -162,7 +141,7 @@ export default function WaterAccount() {
                 color={textColor}
                 mb="8px"
               >
-              Utilização (Litros)<Text color={brandStars}>*</Text>
+                Utilização (Litros)<Text color={brandStars}>*</Text>
               </FormLabel>
               <Input
                 isRequired={true}
@@ -188,7 +167,7 @@ export default function WaterAccount() {
                 color={textColor}
                 mb="8px"
               >
-              Valor da conta<Text color={brandStars}>*</Text>
+                Valor da conta<Text color={brandStars}>*</Text>
               </FormLabel>
               <Input
                 isRequired={true}
@@ -207,19 +186,19 @@ export default function WaterAccount() {
                 }}
               />
               <Button
-                fontSize='sm'
-                variant='brand'
-                fontWeight='500'
-                w='100%'
-                h='50'
-                mb='24px'
+                fontSize="sm"
+                variant="brand"
+                fontWeight="500"
+                w="100%"
+                h="50"
+                mb="24px"
                 onClick={register}
               >
                 {buttonText}
               </Button>
             </FormControl>
           </Flex>
-        </Flex>
+        </Box>
       </Flex>
     </Box>
   );
