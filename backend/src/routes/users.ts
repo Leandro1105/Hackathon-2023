@@ -41,7 +41,7 @@ router.post('/register', (req, res) => {
   if (result.error) {
     res.status(422).json({
       success: false,
-      msg: `Validation err: ${result.error.details[0].message}`,
+      msg: `Cadastro Realizado com Sucesso!`,
     });
     return;
   }

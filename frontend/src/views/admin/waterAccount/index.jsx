@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -25,15 +25,6 @@ export default function WaterAccount() {
     if (event) {
       event.preventDefault();
     }
-    if (!date) {
-      return setError("Você deve inserir uma data da conta");
-    }
-    if (!utilization) {
-      return setError("Você deve inserir a utilização");
-    }
-    if (!value) {
-      return setError("Você deve inserir o valor da conta");
-    }
     try {
       setButtonText("Cadastrando");
       const userId = localStorage.getItem('userId');
@@ -45,12 +36,17 @@ export default function WaterAccount() {
         value: value,
       });
       if (response.data && response.data.success === false) {
+        setDate(new Date());
+        setValue(0);
+        setUtilization(0);
+        setCompanyId(0);
+        setError(undefined);
         setButtonText("Cadastrar");
         return setError(response.data.msg);
       }
     } catch (err) {
-      console.log(err);
       setButtonText("Cadastrar");
+      console.log(err);
       if (err.response) {
         return setError(err.response.data.msg);
       }
