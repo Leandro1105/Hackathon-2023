@@ -93,17 +93,17 @@ export default function TotalSpent(props) {
               Total
             </Text>
             <Flex align='center'>
-              <Icon as={RiArrowUpSFill} color='green.500' me='2px' mt='2px' />
-              <Text color='green.500' fontSize='sm' fontWeight='700'>
-                -8.75%
+              <Icon as={RiArrowUpSFill} color='red.500' me='2px' mt='2px' />
+              <Text color='red.500' fontSize='sm' fontWeight='700'>
+                +8.75%
               </Text>
             </Flex>
           </Flex>
 
           <Flex align='center'>
-            <Icon as={IoCheckmarkCircle} color='green.500' me='4px' />
-            <Text color='green.500' fontSize='md' fontWeight='700'>
-              Positivo
+            <Icon as={IoCheckmarkCircle} color='red.500' me='4px' />
+            <Text color='red.500' fontSize='md' fontWeight='700'>
+              Negativo
             </Text>
           </Flex>
         </Flex>

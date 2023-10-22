@@ -58,9 +58,8 @@ function TopCreatorTable(props) {
           mb='10px'
           boxShadow='0px 40px 58px -20px rgba(112, 144, 176, 0.26)'>
           <Text color={textColor} fontSize='xl' fontWeight='600'>
-            Top Creators
+            Empresas
           </Text>
-          <Button variant='action'>See all</Button>
         </Flex>
         <Table {...getTableProps()} variant='simple' color='gray.500'>
           <Thead>
@@ -92,7 +91,7 @@ function TopCreatorTable(props) {
                 <Tr {...row.getRowProps()} key={index}>
                   {row.cells.map((cell, index) => {
                     let data = "";
-                    if (cell.column.Header === "Name") {
+                    if (cell.column.Header === "Nome") {
                       data = (
                         <Flex align='center'>
                           <Avatar
@@ -109,7 +108,7 @@ function TopCreatorTable(props) {
                           </Text>
                         </Flex>
                       );
-                    } else if (cell.column.Header === "Artworks") {
+                    } else if (cell.column.Header === "Score") {
                       data = (
                         <Text
                           color={textColorSecondary}
@@ -118,7 +117,7 @@ function TopCreatorTable(props) {
                           {cell.value}
                         </Text>
                       );
-                    } else if (cell.column.Header === "Rating") {
+                    } else if (cell.column.Header === "Próximo Selo") {
                       data = (
                         <Box>
                           <Progress

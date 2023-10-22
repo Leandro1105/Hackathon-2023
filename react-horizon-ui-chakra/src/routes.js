@@ -31,6 +31,7 @@ import EnergyAccount from "views/admin/energyAccount";
 // import SignInCentered from "views/auth/signIn";
 import SignIn from "views/auth/signIn/index.jsx";
 import SignUp from "views/auth/signUp/index.jsx";
+import { IoMdMedal } from "react-icons/io";
 
 const routes = [
   {
@@ -55,12 +56,12 @@ const routes = [
     component: EnergyAccount,
   },
   {
-    name: "Parceiros/Ranking",
+    name: "Benefícios/Ranking",
     layout: "/admin",
     path: "/nft-marketplace",
     icon: (
       <Icon
-        as={MdOutlineShoppingCart}
+        as={IoMdMedal}
         width='20px'
         height='20px'
         color='inherit'

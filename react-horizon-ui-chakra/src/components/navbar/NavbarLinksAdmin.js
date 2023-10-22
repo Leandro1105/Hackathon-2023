@@ -95,10 +95,10 @@ export default function HeaderLinks(props) {
           fontSize='sm'
           fontWeight='700'
           me='6px'>
-          1,924
+          750
           <Text as='span' display={{ base: "none", md: "unset" }}>
             {" "}
-            ETH
+            SCORE
           </Text>
         </Text>
       </Flex>
@@ -186,7 +186,7 @@ export default function HeaderLinks(props) {
           <Flex flexDirection='column'>
             <Link w='100%' href=''>
               <Button w='100%' h='44px' mb='10px' variant='brand'>
-                Buy Horizon UI PRO
+                TESTE
               </Button>
             </Link>
             <Link
@@ -265,7 +265,7 @@ export default function HeaderLinks(props) {
               fontSize='sm'
               fontWeight='700'
               color={textColor}>
-              👋&nbsp; Hey, Adela
+              👋&nbsp; Olá, Admin
             </Text>
           </Flex>
           <Flex flexDirection='column' p='10px'>
@@ -274,14 +274,7 @@ export default function HeaderLinks(props) {
               _focus={{ bg: "none" }}
               borderRadius='8px'
               px='14px'>
-              <Text fontSize='sm'>Profile Settings</Text>
-            </MenuItem>
-            <MenuItem
-              _hover={{ bg: "none" }}
-              _focus={{ bg: "none" }}
-              borderRadius='8px'
-              px='14px'>
-              <Text fontSize='sm'>Newsletter Settings</Text>
+              <Text fontSize='sm'>Perfil</Text>
             </MenuItem>
             <MenuItem
               _hover={{ bg: "none" }}
@@ -290,7 +283,7 @@ export default function HeaderLinks(props) {
               borderRadius='8px'
               px='14px'
               onClick={handleLogout}>
-              <Text fontSize='sm'>Log out</Text>
+              <Text fontSize='sm'>Sair</Text>
             </MenuItem>
           </Flex>
         </MenuList>
