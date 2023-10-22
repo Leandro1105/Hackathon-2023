@@ -9,13 +9,6 @@ import {
   MdLogin,
   MdWater,
   MdLightbulb,
-<<<<<<< HEAD
-  MdLightMode,
-  MdLightbulbOutline,
-  MdFlashlightOn,
-  MdCarCrash
-=======
->>>>>>> ef0253f43b6051ce27c5592571d40f8122237022
 } from "react-icons/md";
 
 // Admin Imports
