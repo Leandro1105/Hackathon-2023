@@ -253,11 +253,11 @@ export const pieChartData = [63, 25, 12];
 
 export const lineChartDataTotalSpent = [
   {
-    name: "Revenue",
+    name: "Consumo",
     data: [50, 64, 48, 66, 49, 68],
   },
   {
-    name: "Profit",
+    name: "Consumo Esperado",
     data: [30, 40, 24, 46, 20, 46],
   },
 ];

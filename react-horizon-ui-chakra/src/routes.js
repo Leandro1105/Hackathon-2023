@@ -71,21 +71,14 @@ const routes = [
     secondary: true,
   },
   {
-    name: "Data Tables",
-    layout: "/admin",
-    icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
-    path: "/data-tables",
-    component: DataTables,
-  },
-  {
-    name: "Profile",
+    name: "Perfil",
     layout: "/admin",
     path: "/profile",
     icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
     component: Profile,
   },
   {
-    name: "Signin",
+    name: "Entrar",
     layout: "/auth",
     path: "/sign-in",
     icon: (
@@ -95,7 +88,7 @@ const routes = [
     hide: true
   },
   {
-    name: "Sign up",
+    name: "Cadastrar Empresa",
     layout: "/auth",
     path: "/sign-up",
     icon: (
@@ -104,18 +97,11 @@ const routes = [
     component: SignUp,
     hide: true
   },
-  {
-    name: "RTL Admin",
-    layout: "/rtl",
-    path: "/rtl-default",
-    icon: <Icon as={MdAdminPanelSettings} width='20px' height='20px' color='inherit' />,
-    component: RTL,
-  },
 ];
 
 export const Logout = [
   {
-    name: "Log Out",
+    name: "Sair",
     layout: "/auth",
     path: "/sign-out",
     icon: (
