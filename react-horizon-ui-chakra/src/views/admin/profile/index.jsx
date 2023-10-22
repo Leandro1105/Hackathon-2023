@@ -8,7 +8,6 @@ import Storage from "views/admin/profile/components/Storage";
 
 // Assets
 import banner from "assets/img/auth/banner.jpg";
-//import avatar from "assets/img/avatars/avatar4.png";
 import React from "react";
 
 export default function Overview() {
