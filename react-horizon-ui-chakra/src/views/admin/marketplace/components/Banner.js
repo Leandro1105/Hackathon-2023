@@ -30,7 +30,7 @@ export default function Banner() {
         }}
         fontWeight='700'
         lineHeight={{ base: "32px", md: "42px" }}>
-        Discover, collect, and sell extraordinary NFTs
+        Descubra todas as vantagens do Selo de Sustentabilidade
       </Text>
       <Text
         fontSize='md'

@@ -13,7 +13,7 @@ import IconBox from "components/icons/IconBox";
 import Menu from "components/menu/MainMenu";
 import React from "react";
 // Assets
-import { MdOutlineCloudDone } from "react-icons/md";
+import { MdOutlineCloudDone, } from "react-icons/md";
 
 export default function Banner(props) {
   const { used, total } = props;
