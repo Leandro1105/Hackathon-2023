@@ -12,10 +12,9 @@ import {
 import AuthApi from "../../../api/auth";
 
 export default function newPoint() {
-  const [value, setValue] = useState(0);
-  const [date, setDate] = useState(new Date());
-  const [companyId, setCompanyId] = useState(0);
-  const [utilization, setUtilization] = useState(0);
+  const [quantity, setQuantitiy] = useState(0);
+  const [adress, setAdress] = useState(0);
+  const [number, setNumber] = useState(0);
   const [error, setError] = useState(undefined);
   const [buttonText, setButtonText] = useState("Cadastrar");
   const textColor = useColorModeValue("navy.700", "white");
@@ -25,24 +24,23 @@ export default function newPoint() {
     if (event) {
       event.preventDefault();
     }
-    if (!date) {
-      return setError("Você deve inserir uma data da conta");
+    if (!adress) {
+      return setError("Você deve inserir um endereço");
     }
-    if (!utilization) {
-      return setError("Você deve inserir a utilização");
+    if (!number) {
+      return setError("Você deve inserir um numero");
     }
-    if (!value) {
-      return setError("Você deve inserir o valor da conta");
+    if (!quantity) {
+      return setError("Você deve inserir a quantidade de pessoas");
     }
     try {
       setButtonText("Cadastrando");
       const userId = localStorage.getItem('userId');
       console.log(userId)
       let response = await AuthApi.Register({
-        companyid: userId,
-        date: date,
-        utilization: utilization,
-        value: value,
+        adress: adress,
+        adress_number: number,
+        quantity: quantity
       });
       if (response.data && response.data.success === false) {
         setButtonText("Cadastrar");
@@ -81,7 +79,7 @@ export default function newPoint() {
             fontWeight="400"
             fontSize="md"
           >
-            Cadastre sua conta de água abaixo
+            Cadastre seu ponto de encontro abaixo
           </Text>
           <Flex
             zIndex="2"
@@ -114,21 +112,21 @@ export default function newPoint() {
                 color={textColor}
                 mb="8px"
               >
-                Data da conta<Text color={brandStars}>*</Text>
+                Endereço<Text color={brandStars}>*</Text>
               </FormLabel>
               <Input
                 isRequired={true}
                 variant="auth"
                 fontSize="sm"
                 ms={{ base: "0px", md: "0px" }}
-                type="date" // Date
-                placeholder="Digite a data da conta (YYYY-MM-DD)"
+                type="number"
+                placeholder="Digite o valor da conta"
                 mb="24px"
-                defaultValue={date}
+                defaultValue={adress}
                 fontWeight="500"
                 size="lg"
                 onChange={(event) => {
-                  setDate(event.target.value);
+                  setAdress(event.target.value);
                   setError(undefined);
                 }}
               />
@@ -140,7 +138,7 @@ export default function newPoint() {
                 color={textColor}
                 mb="8px"
               >
-                Utilização (Litros)<Text color={brandStars}>*</Text>
+                Número<Text color={brandStars}>*</Text>
               </FormLabel>
               <Input
                 isRequired={true}
@@ -150,11 +148,11 @@ export default function newPoint() {
                 type="number"
                 placeholder="Digite o valor da conta"
                 mb="24px"
-                defaultValue={utilization}
+                defaultValue={number}
                 fontWeight="500"
                 size="lg"
                 onChange={(event) => {
-                  setUtilization(event.target.value);
+                  setNumber(event.target.value);
                   setError(undefined);
                 }}
               />
@@ -166,7 +164,7 @@ export default function newPoint() {
                 color={textColor}
                 mb="8px"
               >
-                Valor da conta<Text color={brandStars}>*</Text>
+                Quantidade de pessoas<Text color={brandStars}>*</Text>
               </FormLabel>
               <Input
                 isRequired={true}
@@ -176,11 +174,11 @@ export default function newPoint() {
                 type="number"
                 placeholder="Digite o valor da conta"
                 mb="24px"
-                defaultValue={value}
+                defaultValue={quantity}
                 fontWeight="500"
                 size="lg"
                 onChange={(event) => {
-                  setValue(event.target.value);
+                  setQuantitiy(event.target.value);
                   setError(undefined);
                 }}
               />
