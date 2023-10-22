@@ -80,7 +80,7 @@ export const barChartOptionsDailyTraffic = {
         [
           {
             offset: 0,
-            color: "#4318FF",
+            color: "#14BF27",
             opacity: 1,
           },
           {
@@ -210,7 +210,7 @@ export const barChartOptionsConsumption = {
 
 export const pieChartOptions = {
   labels: ["Your files", "System", "Empty"],
-  colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+  colors: ["#14BF27", "#6AD2FF", "#EFF4FB"],
   chart: {
     width: "50px",
   },
@@ -239,7 +239,7 @@ export const pieChartOptions = {
     },
   },
   fill: {
-    colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+    colors: ["#14BF27", "#6AD2FF", "#EFF4FB"],
   },
   tooltip: {
     enabled: true,
@@ -273,10 +273,10 @@ export const lineChartOptionsTotalSpent = {
       left: 0,
       blur: 10,
       opacity: 0.1,
-      color: "#4318FF",
+      color: "#14BF27",
     },
   },
-  colors: ["#4318FF", "#39B8FF"],
+  colors: ["#14BF27", "#39B8FF"],
   markers: {
     size: 0,
     colors: "white",
@@ -328,9 +328,9 @@ export const lineChartOptionsTotalSpent = {
   grid: {
     show: false,
     column: {
-      color: ["#7551FF", "#39B8FF"],
+      color: ["#14BF27", "#39B8FF"],
       opacity: 0.5,
     },
   },
-  color: ["#7551FF", "#39B8FF"],
+  color: ["#14BF27", "#39B8FF"],
 };
