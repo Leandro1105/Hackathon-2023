@@ -7,14 +7,19 @@ import Banner from "views/admin/profile/components/Banner";
 import Storage from "views/admin/profile/components/Storage";
 
 // Assets
+<<<<<<< HEAD
 import banner from "assets/img/auth/banner.jpg";
 //import avatar from "assets/img/avatars/avatar4.png";
+=======
+import banner from "assets/img/auth/banner.png";
+import avatar from "assets/img/avatars/avatar4.png";
+>>>>>>> ef0253f43b6051ce27c5592571d40f8122237022
 import React from "react";
 
 export default function Overview() {
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
-      {/* Main Fields */}
+      {}
       <Grid
         templateColumns={{
           base: "1fr",

@@ -2,29 +2,26 @@ import React from "react";
 
 import { Icon } from "@chakra-ui/react";
 import {
-  MdBarChart,
   MdPerson,
   MdHome,
   MdLock,
   MdLogout,
-  MdOutlineShoppingCart,
   MdLogin,
-  MdAdminPanelSettings,
   MdWater,
-  MdLight,
   MdLightbulb,
+<<<<<<< HEAD
   MdLightMode,
   MdLightbulbOutline,
   MdFlashlightOn,
   MdCarCrash
+=======
+>>>>>>> ef0253f43b6051ce27c5592571d40f8122237022
 } from "react-icons/md";
 
 // Admin Imports
 import MainDashboard from "views/admin/default";
 import NFTMarketplace from "views/admin/marketplace";
 import Profile from "views/admin/profile";
-import DataTables from "views/admin/dataTables";
-import RTL from "views/admin/rtl";
 import WaterAccount from "views/admin/waterAccount";
 import EnergyAccount from "views/admin/energyAccount";
 

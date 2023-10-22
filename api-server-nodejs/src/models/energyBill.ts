@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 import { v4 as uuid } from 'uuid';
 
 @Entity()
@@ -20,4 +20,7 @@ export default class EnergyBill {
 
   @Column({ type: 'date' })
   date!: Date;
+
+  @Column({type: 'varchar'})
+  user_id!: string;
 }

@@ -22,17 +22,12 @@
 
 // Chakra imports
 import {
-  Avatar,
   Box,
-  Flex,
-  FormLabel,
   Icon,
-  Select,
   SimpleGrid,
   useColorModeValue,
 } from "@chakra-ui/react";
 // Assets
-import Usa from "assets/img/dashboards/usa.png";
 // Custom components
 import MiniCalendar from "components/calendar/MiniCalendar";
 import MiniStatistics from "components/card/MiniStatistics";
@@ -40,10 +35,7 @@ import IconBox from "components/icons/IconBox";
 import React from "react";
 import { IoMdMedal } from "react-icons/io";
 import {
-  MdAddTask,
-  MdAttachMoney,
   MdBarChart,
-  MdCarCrash,
   MdCarRepair,
   MdFileCopy,
 } from "react-icons/md";

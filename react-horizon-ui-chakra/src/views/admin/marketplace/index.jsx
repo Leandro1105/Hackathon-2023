@@ -3,10 +3,8 @@ import React from "react";
 // Chakra imports
 import {
   Box,
-  Button,
   Flex,
   Grid,
-  Link,
   Text,
   useColorModeValue,
   SimpleGrid,
