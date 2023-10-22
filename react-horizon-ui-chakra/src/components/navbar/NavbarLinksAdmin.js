@@ -95,10 +95,10 @@ export default function HeaderLinks(props) {
           fontSize='sm'
           fontWeight='700'
           me='6px'>
-          1,924
+          750
           <Text as='span' display={{ base: "none", md: "unset" }}>
             {" "}
-            ETH
+            SCORE
           </Text>
         </Text>
       </Flex>
@@ -186,7 +186,7 @@ export default function HeaderLinks(props) {
           <Flex flexDirection='column'>
             <Link w='100%' href=''>
               <Button w='100%' h='44px' mb='10px' variant='brand'>
-                Buy Horizon UI PRO
+                TESTE
               </Button>
             </Link>
             <Link

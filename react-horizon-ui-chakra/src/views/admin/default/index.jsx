@@ -101,7 +101,7 @@ export default function UserReports() {
           value='7 - Ouro'
         />
         <MiniStatistics growth='+7%' name='Energia' value='1298 KWh' />
-        <MiniStatistics growth='+2%' name='Água' value='671 L KWh' />
+        <MiniStatistics growth='+2%' name='Água' value='671 L' />
         <MiniStatistics
           startContent={
             <IconBox
