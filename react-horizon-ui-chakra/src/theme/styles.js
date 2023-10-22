@@ -48,7 +48,12 @@ export const globalStyles = {
     red: {
       100: "#FEEFEE",
       500: "#EE5D50",
-      600: "#E31A1A",
+      600: "#FF0000",
+    },
+    red2: {
+      100: "#FF0000",
+      500: "#FF0000",
+      600: "#FF0000",
     },
     blue: {
       50: "#EFF4FB",

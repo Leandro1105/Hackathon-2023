@@ -14,13 +14,13 @@ import Menu from "components/menu/MainMenu";
 import React from "react";
 // Assets
 import { MdOutlineCloudDone, } from "react-icons/md";
-import { IoMdMedal } from "react-icons/io";
+import { MdCarCrash } from "react-icons/md";
 
 export default function Banner(props) {
   const { used, total } = props;
   // Chakra Color Mode
   const textColorPrimary = useColorModeValue("secondaryGray.900", "white");
-  const brandColor = useColorModeValue("brand.500", "white");
+  const brandColor = useColorModeValue("red.500", "white");
   const textColorSecondary = "gray.400";
   const box = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
   return (
@@ -37,32 +37,32 @@ export default function Banner(props) {
           <IconBox
               w='56px'
               h='56px'
-              bg='linear-gradient(90deg, #f0c808 0%, #f9c74f 100%)'
+              bg='linear-gradient(90deg, #0023FF 0%, #0023FF 100%)'
               //bg={boxBg}
               icon={
-                <Icon w='32px' h='32px' as={IoMdMedal} color='white' />
+                <Icon w='32px' h='32px' as={MdCarCrash} color='white' />
               }
             />
         }
         bg={box}
       />
       <Text color={textColorPrimary} fontWeight='bold' fontSize='2xl' mt='10px'>
-        Nível 3 - Ouro
+      Ponto de Encontro 6
       </Text>
       <Text
         color={textColorSecondary}
         fontSize='md'
         maxW={{ base: "100%", xl: "80%", "3xl": "60%" }}
         mx='auto'>
-        Você está no nível Ouro, seu próximo selo é Platina.
+        Magazine Luiza - Rua Voluntários da Franca, 1465 
       </Text>
       <Box w='100%' mt='auto'>
         <Flex w='100%' justify='space-between' mb='10px'>
           <Text color={textColorSecondary} fontSize='sm' maxW='40%'>
-            {used} PTS
+            {used} Lugares
           </Text>
           <Text color={textColorSecondary} fontSize='sm' maxW='40%'>
-            {total} PTS
+            {total} Lugares
           </Text>
         </Flex>
         <Progress

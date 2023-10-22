@@ -32,18 +32,18 @@ export default function Points() {
         gap={{ base: "20px", xl: "20px" }}>
         <Storage1
           gridArea={{ base: "2 / 1 / 3 / 2", lg: "1 / 2 / 2 / 3" }}
-          used={750}
-          total={800}
+          used={3}
+          total={4}
         />
         <Storage2
           gridArea={{ base: "2 / 1 / 3 / 2", lg: "1 / 2 / 2 / 3" }}
-          used={750}
-          total={800}
+          used={2}
+          total={4}
         />
         <Storage3
           gridArea={{ base: "2 / 1 / 3 / 2", lg: "1 / 2 / 2 / 3" }}
-          used={750}
-          total={800}
+          used={6}
+          total={6}
         />
       </Grid>
       <Grid
@@ -58,18 +58,18 @@ export default function Points() {
         gap={{ base: "20px", xl: "20px" }}>
         <Storage4
           gridArea={{ base: "2 / 1 / 3 / 2", lg: "1 / 2 / 2 / 3" }}
-          used={750}
-          total={800}
+          used={2}
+          total={4}
         />
         <Storage5
           gridArea={{ base: "2 / 1 / 3 / 2", lg: "1 / 2 / 2 / 3" }}
-          used={750}
-          total={800}
+          used={4}
+          total={4}
         />
         <Storage6
           gridArea={{ base: "2 / 1 / 3 / 2", lg: "1 / 2 / 2 / 3" }}
-          used={750}
-          total={800}
+          used={3}
+          total={4}
         />
       </Grid>
     </Box>
