@@ -9,6 +9,7 @@ import {
   MdLogin,
   MdWater,
   MdLightbulb,
+  MdCarCrash
 } from "react-icons/md";
 
 // Admin Imports
@@ -17,6 +18,7 @@ import NFTMarketplace from "views/admin/marketplace";
 import Profile from "views/admin/profile";
 import WaterAccount from "views/admin/waterAccount";
 import EnergyAccount from "views/admin/energyAccount";
+import Points from "views/admin/points";
 
 // Auth Imports
 // import SignInCentered from "views/auth/signIn";
@@ -46,13 +48,13 @@ const routes = [
     icon: <Icon as={MdLightbulb} width='20px' height='20px' color='inherit' />,
     component: EnergyAccount,
   },
-  /*{
+  {
     name: "Pontos de Encontro",
     layout: "/admin",
     path: "/points",
     icon: <Icon as={MdCarCrash} width='20px' height='20px' color='inherit' />,
-    component: Carona,
-  },*/
+    component: Points,
+  },
   {
     name: "Benefícios/Ranking",
     layout: "/admin",
