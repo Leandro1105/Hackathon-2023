@@ -29,6 +29,11 @@ export class createEnergyBill1697909070059 implements MigrationInterface {
                     type: "date",
                     isNullable: false,
                 },
+                {
+                    name: "user_id",
+                    type: "uuid",
+                    isNullable: false,
+                },
             ],
         }));
     }

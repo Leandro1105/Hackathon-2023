@@ -33,7 +33,7 @@ router.post("/register", (req, res) => {
     return;
   }
 
-  const { watts, value, date } = req.body;
+  const { watts, value, date, user_id } = req.body;
 
   const energyBillRepository = connection!.getRepository(EnergyBill);
 
@@ -41,6 +41,7 @@ router.post("/register", (req, res) => {
   energyBill.watts = watts;
   energyBill.value = value;
   energyBill.date = date;
+  energyBill.user_id = user_id;
 
   energyBillRepository.save(energyBill).then((e) => {
     res.json({

@@ -12,6 +12,8 @@ import passport from 'passport';
 
 import initPassport from '../config/passport';
 import routes from '../routes/users';
+import energyRoute from '../routes/energyBill.route';
+import waterRoute from '../routes/waterBill.route';
 import sessionRoute from '../routes/session.route'
 import { connect } from './database';
 
@@ -34,7 +36,7 @@ server.use(express.json());
 // Initialize routes middleware
 server.use('/api/users', routes);
 server.use('/api/sessions', sessionRoute);
-server.use('/api/energy-bill', sessionRoute);
-server.use('/api/water-bill', sessionRoute);
+server.use('/api/energy-bill', energyRoute);
+server.use('/api/water-bill', waterRoute);
 
 export default server;

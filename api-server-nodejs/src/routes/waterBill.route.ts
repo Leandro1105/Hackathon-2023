@@ -35,7 +35,7 @@ router.post("/register", (req, res) => {
 
   const { liter, value, date } = req.body;
 
-  const waterBillRepository = connection!.getRepository(WaterBill); // Change energyBillRepository to waterBillRepository
+  const waterBillRepository = connection!.getRepository(WaterBill); 
 
   const waterBill = new WaterBill(); // Change EnergyBill to WaterBill
   waterBill.liter = liter;
