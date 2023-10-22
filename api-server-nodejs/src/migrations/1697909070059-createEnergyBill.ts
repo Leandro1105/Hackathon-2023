@@ -4,32 +4,6 @@ export class createEnergyBill1697909070059 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
-            name: "company",
-            columns: [
-                {
-                    name: "id",
-                    type: "uuid",
-                    isPrimary: true,
-                    isGenerated: true,
-                },
-                {
-                    name: "name",
-                    type: "varchar",
-                    isNullable: false,
-                },
-                {
-                    name: "type",
-                    type: "varchar",
-                    isNullable: false,
-                },
-                {
-                    name: "created_at",
-                    type: "timestamp",
-                },
-            ],
-        }));
-
-        await queryRunner.createTable(new Table({
             name: "energy_bill",
             columns: [
                 {
@@ -57,12 +31,10 @@ export class createEnergyBill1697909070059 implements MigrationInterface {
                 },
             ],
         }));
-
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable("energy_bill");
-        await queryRunner.dropTable("company");
     }
 
 }

@@ -8,7 +8,7 @@ import { connection } from "../server/database";
 const router = express.Router();
 
 const EnergyBillSchema = Joi.object().keys({
-  EnergyBillID: Joi.string().optional().uuid(),
+  energyBillID: Joi.string().optional().uuid(),
   watts: Joi.number().required(),
   value: Joi.number().required(),
   date: Joi.date().required(),
@@ -65,9 +65,9 @@ router.post("/edit", checkToken, (req, res) => {
 
   const energyBillRepository = connection!.getRepository(EnergyBill);
 
-  energyBillRepository.find({ id: energyBillID }).then((EnergyBill) => {
-    if (EnergyBill.length === 1) {
-      const query = { id: EnergyBill[0].id };
+  energyBillRepository.find({ id: energyBillID }).then((energyBill) => {
+    if (energyBill.length === 1) {
+      const query = { id: energyBill[0].id };
       const newvalues = { watts, value, date };
       energyBillRepository.update(query, newvalues)
         .then(() => {
