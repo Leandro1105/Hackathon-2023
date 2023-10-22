@@ -111,7 +111,7 @@ function SignIn() {
     if(city === "") {
       return setError("Voce deve informar uma cidade");
     }
-    if(cnpj === ""){
+    if(cnpj === "" && userType === "user"){
       return setError("Voce deve informar um cnpj");  
     }
     try {
@@ -145,49 +145,53 @@ function SignIn() {
     <DefaultAuth illustrationBackground={illustration} image={illustration}>
       <Flex
         maxW={{ base: "100%", md: "max-content" }}
-        w='100%'
+        w="100%"
         mx={{ base: "auto", lg: "0px" }}
-        me='auto'
-        h='100%'
-        alignItems='start'
-        justifyContent='center'
+        me="auto"
+        h="100%"
+        alignItems="start"
+        justifyContent="center"
         mb={{ base: "30px", md: "60px" }}
         px={{ base: "25px", md: "0px" }}
         mt={{ base: "40px", md: "14vh" }}
-        flexDirection='column'>
-        <Box me='auto'>
-          <Heading color={textColor} fontSize='36px' mb='10px'>
+        flexDirection="column"
+      >
+        <Box me="auto">
+          <Heading color={textColor} fontSize="36px" mb="10px">
             Cadastre-se
           </Heading>
           <Text
-            mb='36px'
-            ms='4px'
+            mb="36px"
+            ms="4px"
             color={textColorSecondary}
-            fontWeight='400'
-            fontSize='md'>
+            fontWeight="400"
+            fontSize="md"
+          >
             Cadastre-se no sistema para acessar as informações
           </Text>
         </Box>
         <Flex
-          zIndex='2'
-          direction='column'
+          zIndex="2"
+          direction="column"
           w={{ base: "100%", md: "420px" }}
-          maxW='100%'
-          background='transparent'
-          borderRadius='15px'
+          maxW="100%"
+          background="transparent"
+          borderRadius="15px"
           mx={{ base: "auto", lg: "unset" }}
-          me='auto'
-          mb={{ base: "20px", md: "auto" }}>
+          me="auto"
+          mb={{ base: "20px", md: "auto" }}
+        >
           <Flex
-            zIndex='2'
-            direction='column'
+            zIndex="2"
+            direction="column"
             w={{ base: "100%", md: "420px" }}
-            maxW='100%'
-            background='transparent'
-            borderRadius='15px'
+            maxW="100%"
+            background="transparent"
+            borderRadius="15px"
             mx={{ base: "auto", lg: "unset" }}
-            me='auto'
-            mb={{ base: "20px", md: "auto" }}>
+            me="auto"
+            mb={{ base: "20px", md: "auto" }}
+          >
             <h4
               style={{
                 fontSize: ".9em",
@@ -199,7 +203,8 @@ function SignIn() {
             >
               {error}
             </h4>
-            <FormControl>
+            
+              <FormControl>
               <FormLabel
                 display='flex'
                 ms='4px'
@@ -233,18 +238,19 @@ function SignIn() {
               Tipo de usuário<Text color={brandStars}></Text>
               </FormLabel>
               <RadioGroup
-              value={userType}
-              onChange={(value) => setUserType(value)}
-              >
-              <HStack spacing="24px">
-                <Radio value="company" onChange={() => setUserType("company")}>
-                  CNPJ
-                </Radio>
-                <Radio value="user" onChange={() => setUserType("user")}>
-                  CPF
-                </Radio>
-              </HStack>
+                value={userType}
+                onChange={(value) => setUserType(value)}
+                >
+                <HStack spacing="24px">
+                  <Radio value="company" onChange={() => setUserType("company")}>
+                    CNPJ
+                  </Radio>
+                  <Radio value="user" onChange={() => setUserType("user")}>
+                    CPF
+                  </Radio>
+                </HStack>
               </RadioGroup>
+              <br></br>
               <FormLabel
                 display='flex'
                 ms='4px'
@@ -412,30 +418,32 @@ function SignIn() {
                 {buttonText}
               </Button>
             </FormControl>
-            <Flex
-              flexDirection='column'
-              justifyContent='center'
-              alignItems='start'
-              maxW='100%'
-              mt='0px'>
-              <Text color={textColorDetails} fontWeight='400' fontSize='14px'>
-                Já tem uma conta?
-                <NavLink to='/auth/sign-in'>
-                  <Text
-                    color={textColorBrand}
-                    as='span'
-                    ms='5px'
-                    fontWeight='500'>
-                    Login
-                  </Text>
-                </NavLink>
-              </Text>
-            </Flex>
+          </Flex>
+          <Flex
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="start"
+            maxW="100%"
+            mt="0px"
+          >
+            <Text color={textColorDetails} fontWeight="400" fontSize="14px">
+              Já tem uma conta?
+              <NavLink to="/auth/sign-in">
+                <Text
+                  color={textColorBrand}
+                  as="span"
+                  ms="5px"
+                  fontWeight="500"
+                >
+                  Login
+                </Text>
+              </NavLink>
+            </Text>
           </Flex>
         </Flex>
       </Flex>
     </DefaultAuth>
-  );
+  );  
 }
 
 export default SignIn;

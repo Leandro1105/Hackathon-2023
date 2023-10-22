@@ -136,32 +136,6 @@ export default function EnergyAccount() {
                 color={textColor}
                 mb="8px"
               >
-              Id da empresa<Text color={brandStars}>*</Text>
-              </FormLabel>
-              <Input
-                isRequired={true}
-                variant="auth"
-                fontSize="sm"
-                ms={{ base: "0px", md: "0px" }}
-                type="number"
-                placeholder="Digite o id da empresa"
-                mb="24px"
-                defaultValue={companyId}
-                fontWeight="500"
-                size="lg"
-                onChange={(event) => {
-                  setCompanyId(event.target.value);
-                  setError(undefined);
-                }}
-              />
-                            <FormLabel
-                display="flex"
-                ms="4px"
-                fontSize="sm"
-                fontWeight="500"
-                color={textColor}
-                mb="8px"
-              >
               Data da conta<Text color={brandStars}>*</Text>
               </FormLabel>
               <Input
@@ -169,8 +143,8 @@ export default function EnergyAccount() {
                 variant="auth"
                 fontSize="sm"
                 ms={{ base: "0px", md: "0px" }}
-                type="number"
-                placeholder="Digite a data da conta"
+                type="date" // Usando o tipo 'date'
+                placeholder="Digite a data da conta (YYYY-MM-DD)"
                 mb="24px"
                 defaultValue={date}
                 fontWeight="500"
