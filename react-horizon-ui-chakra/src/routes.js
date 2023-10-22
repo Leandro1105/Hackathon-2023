@@ -15,7 +15,8 @@ import {
   MdLightbulb,
   MdLightMode,
   MdLightbulbOutline,
-  MdFlashlightOn
+  MdFlashlightOn,
+  MdCarCrash
 } from "react-icons/md";
 
 // Admin Imports
@@ -55,6 +56,13 @@ const routes = [
     icon: <Icon as={MdLightbulb} width='20px' height='20px' color='inherit' />,
     component: EnergyAccount,
   },
+  /*{
+    name: "Pontos de Encontro",
+    layout: "/admin",
+    path: "/points",
+    icon: <Icon as={MdCarCrash} width='20px' height='20px' color='inherit' />,
+    component: Carona,
+  },*/
   {
     name: "Benefícios/Ranking",
     layout: "/admin",

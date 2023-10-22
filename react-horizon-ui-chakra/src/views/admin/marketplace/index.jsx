@@ -25,6 +25,12 @@ import Nft2 from "assets/img/nfts/Nft2.png";
 import Nft3 from "assets/img/nfts/Nft3.png";
 import Nft4 from "assets/img/nfts/Nft4.png";
 import Nft5 from "assets/img/nfts/Nft5.png";
+import financeiro from "assets/img/nfts/financeiro.png";
+import politica from "assets/img/nfts/politica.png";
+import varejo from "assets/img/nfts/varejo.png";
+import certificado from "assets/img/nfts/certificado.png";
+import desconto from "assets/img/nfts/desconto.png";
+import campanha from "assets/img/nfts/campanha.png";
 import tableDataTopCreators from "views/admin/marketplace/variables/tableDataTopCreators.json";
 import { tableColumnsTopCreators } from "views/admin/marketplace/variables/tableColumnsTopCreators";
 
@@ -64,15 +70,15 @@ export default function Marketplace() {
             <SimpleGrid columns={{ base: 1, md: 3 }} gap='20px'>
               <NFT
                 name='Subsídios e Financiamento'
-                  image={Nft1}
+                  image={financeiro}
               />
               <NFT
                 name='Incentivos Fiscais'
-                image={Nft2}
+                image={politica}
               />
               <NFT
                 name='Redução de Barreiras Comerciais'
-                image={Nft3}
+                image={varejo}
               />
             </SimpleGrid>
             <Text
@@ -82,7 +88,7 @@ export default function Marketplace() {
               fontSize='2xl'
               ms='24px'
               fontWeight='700'>
-              Benefícios SustenLife365
+              Benefícios SustenLife
             </Text>
             <SimpleGrid
               columns={{ base: 1, md: 3 }}
@@ -90,15 +96,15 @@ export default function Marketplace() {
               mb={{ base: "20px", xl: "0px" }}>
               <NFT
                 name='Certificações e Reconhecimento'
-                image={Nft4}
+                image={certificado}
               />
               <NFT
                 name='Desconto em Empresas Parceiras'
-                image={Nft5}
+                image={desconto}
               />
               <NFT
                 name='Divulgação na Plataforma'
-                //image={Nft6}
+                image={campanha}
               />
             </SimpleGrid>
           </Flex>
